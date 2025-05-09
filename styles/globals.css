@@ -2,4 +2,25 @@
 @tailwind components;
 @tailwind utilities;
 
-/* tes styles globaux éventuels */
+/* 1) Keyframes pour animer le gradient */
+@keyframes gradientBG {
+  0%, 100% {
+    background-position:   0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+/* 2) Classe utilitaire pour le dégradé animé */
+.gradient-animated {
+  background: linear-gradient(
+    45deg,
+    #0b1a2e,
+    #132a4d,
+    #3fc1ff,
+    #0b1a2e
+  );
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
+}
