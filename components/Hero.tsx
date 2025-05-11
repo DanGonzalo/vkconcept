@@ -1,62 +1,34 @@
-// Retirez entièrement le "use client";
+'use client';
 
-import Image from "next/image";
-import Link from "next/link";
-import dynamic from "next/dynamic";
-import logo from "../public/logo.png";
-
-// On charge le fond animé uniquement côté client (pas de SSR)
-const ParticlesBackground = dynamic(
-  () => import("./ParticlesBackground"),
-  { ssr: false }
-);
+import Link from 'next/link';
 
 export default function Hero() {
   return (
     <section
-      id="hero"
-      className="relative h-screen flex flex-col items-center justify-center gradient-animated text-center px-4 overflow-hidden"
+      id="about"
+      className="relative flex flex-col items-center justify-center text-center px-4 sm:px-6 lg:px-8 py-24 md:py-32 overflow-hidden"
     >
-      {/* Fond animé */}
-      <ParticlesBackground />
-
-      {/* Logo */}
-      <div className="mb-8 z-10">
-        <Image
-          src={logo}
-          alt="VK Concept"
-          width={100}
-          height={100}
-          priority
-        />
-      </div>
-
-      {/* Titre */}
-      <h1 className="text-4xl sm:text-6xl font-extrabold text-white z-10">
-        Outsourcing &amp;{" "}
-        <span className="text-brand-blue">Consulting IT</span>
-      </h1>
-
-      {/* Sous-titre */}
-      <p className="mt-4 max-w-2xl text-lg text-gray-200 z-10">
-        Votre partenaire de confiance pour externaliser vos projets IT et
-        accélérer votre croissance.
-      </p>
-
-      {/* Boutons */}
-      <div className="mt-8 flex flex-col sm:flex-row gap-4 z-10">
-        <Link
-          href="#contact"
-          className="inline-block bg-brand-blue text-black font-semibold px-6 py-3 rounded-lg hover:opacity-90 transition"
-        >
-          Contactez-nous
-        </Link>
-        <Link
-          href="#services"
-          className="inline-block border border-white text-white font-semibold px-6 py-3 rounded-lg hover:bg-white hover:text-black transition"
-        >
-          Nos services
-        </Link>
+      <div className="relative z-10 opacity-0 animate-fadeIn max-w-2xl">
+        <h1 className="text-3xl sm:text-5xl md:text-6xl font-bold text-white mb-4">
+          Consulting IT
+        </h1>
+        <p className="text-lg sm:text-xl text-gray-200 mb-8">
+          Votre partenaire de confiance pour externaliser vos projets IT et accélérer votre croissance.
+        </p>
+        <div className="space-x-4">
+          <Link
+            href="#contact"
+            className="inline-block bg-gradient-to-r from-[#4DBDE8] to-[#3AA7D0] text-white font-semibold py-3 px-6 rounded-lg shadow-lg hover:opacity-90 transition"
+          >
+            Contactez-nous
+          </Link>
+          <Link
+            href="#services"
+            className="inline-block border border-[#4DBDE8] text-[#4DBDE8] font-semibold py-3 px-6 rounded-lg hover:bg-white/10 transition"
+          >
+            Nos services
+          </Link>
+        </div>
       </div>
     </section>
   );
