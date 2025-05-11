@@ -1,3 +1,4 @@
+// components/Header.tsx
 import Link from "next/link";
 import Image from "next/image";
 
@@ -9,15 +10,9 @@ export default function Header() {
           <Image src="/logo-nav.png" alt="VK Concept" width={100} height={40} />
         </Link>
         <div className="space-x-6 text-white font-medium">
-          <Link href="#services" className="hover:underline">
-            Services
-          </Link>
-          <Link href="#about" className="hover:underline">
-            À propos
-          </Link>
-          <Link href="#contact" className="hover:underline">
-            Contact
-          </Link>
+          <Link href="#services" className="hover:underline">Services</Link>
+          <Link href="#about" className="hover:underline">À propos</Link>
+          <Link href="#contact" className="hover:underline">Contact</Link>
         </div>
       </nav>
     </header>
