@@ -1,31 +1,5 @@
-// data/features.ts
-export interface Feature {
-  key: string;
-  icon: React.ReactNode; // si tu utilises que des emojis, tu peux remplacer par string
-  title: string;
-  link: string;
-}
-
-// Ici j'utilise React.ReactNode, donc ajoute cette ligne en haut
-import React from "react";
-
-export const features: Feature[] = [
-  {
-    key: "portage",
-    icon: "👔",
-    title: "Portage salarial",
-    link: "#services-portage",
-  },
-  {
-    key: "dev",
-    icon: "💻",
-    title: "Développement logiciel",
-    link: "#services-dev",
-  },
-  {
-    key: "ia",
-    icon: "🤖",
-    title: "Expertise IA",
-    link: "#services-ia",
-  },
+export const features = [
+  { key: "portage", icon: "01", title: "Portage salarial", description: "Accédez à des talents IT au Vietnam avec un interlocuteur francophone et un accompagnement administratif.", link: "/portage-salarial-vietnam", details: "Collaborez avec des professionnels IT basés au Vietnam et concentrez-vous sur vos projets. VK Concept accompagne la gestion administrative, les contrats et la coordination avec vos équipes.", points: ["Freelances IT et équipes dédiées", "Gestion administrative et RH", "Interface francophone"] },
+  { key: "dev", icon: "02", title: "Développement logiciel", description: "Applications web et mobiles, plateformes SaaS et outils métier : des logiciels conçus autour de vos besoins.", link: "/developpement-logiciel", details: "Nos développeurs au Vietnam vous accompagnent dans la conception, le développement et la maintenance de solutions sur mesure : applications web et mobiles, API, e-commerce et intégrations ERP ou CRM.", points: ["Applications web, mobiles et SaaS", "API, microservices et ERP / CRM", "Tests, maintenance et évolution"] },
+  { key: "ia", icon: "03", title: "Intelligence artificielle", description: "De l’audit aux modèles prédictifs et aux chatbots, intégrez l’IA là où elle apporte une valeur concrète.", link: "/intelligence-artificielle", details: "Audit, stratégie, développement et formation : notre équipe vous accompagne dans l’intégration de l’intelligence artificielle. Nous concevons des solutions alignées sur vos objectifs, de l’automatisation à l’analyse de données.", points: ["Audit et stratégie IA", "Machine learning, NLP et chatbots", "Automatisation et formation"] },
 ];

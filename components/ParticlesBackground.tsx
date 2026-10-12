@@ -1,7 +1,7 @@
 // components/ParticlesBackground.tsx
 'use client';
 
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import Particles, { initParticlesEngine } from '@tsparticles/react';
 import type { Engine, ISourceOptions } from '@tsparticles/engine';
 import { loadFull } from 'tsparticles';
@@ -47,21 +47,25 @@ const particlesOptions: ISourceOptions = {
 };
 
 export default function ParticlesBackground() {
+  const [ready, setReady] = useState(false);
   useEffect(() => {
+    let active = true;
     initParticlesEngine(async (engine: Engine) => {
       await loadFull(engine);
-    });
+    }).then(() => { if (active) setReady(true); });
+    return () => { active = false; };
   }, []);
 
   return (
     <div
+      aria-hidden="true"
       className="
         absolute inset-0 -z-10
         bg-gradient-to-br
         from-[#0A0F1C] via-[#122537] to-[#175A8D]
       "
     >
-      <Particles id="tsparticles" options={particlesOptions} />
+      {ready && <Particles id="tsparticles" options={particlesOptions} />}
     </div>
   );
 }

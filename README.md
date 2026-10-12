@@ -1,40 +1,25 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/pages/api-reference/create-next-app).
+# VK Concept
 
-## Getting Started
+Site vitrine français avec cinq pages pré-rendues : accueil, présentation, portage salarial au Vietnam, développement logiciel et intelligence artificielle.
 
-First, run the development server:
+## Lancer et vérifier
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- `npm install`
+- `npm run dev`
+- `npm run lint`
+- `npm run build`
+- `npm start`
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Contenu
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+Les prestations sont dans `data/services.ts`, les tarifs dans `data/pricing.ts`, les résumés de l’accueil dans `data/features.ts`. Les tarifs des tableaux transmis par le client sont retenus. Le prix de maintenance est coupé dans la capture source : il reste sur devis.
 
-[API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+## Identité et référencement
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) instead of React pages.
+La palette et les options des particules sont conservées dans `components/ParticlesBackground.tsx`. Les logos modernisés sont les fichiers `public/logo-*-v2.svg` ; les originaux PNG sont conservés. La version claire des logos est prévue pour les fonds sombres du site.
 
-This project uses [`next/font`](https://nextjs.org/docs/pages/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Le domaine officiel utilisé est `https://www.vkconceptvn.com`, à confirmer avant publication. En cas de changement, mettre à jour `next-seo.config.ts`, `public/robots.txt` et `public/sitemap.xml`. Chaque page possède ses métadonnées et son URL canonique.
 
-## Learn More
+Le formulaire de contact prépare un e-mail vers David Revert dans la messagerie du visiteur. Il ne confirme jamais un envoi automatique : aucun service d’envoi n’est configuré. Les données ne sont pas stockées par le site. Les informations légales de l’entreprise, ses coordonnées complètes et les références clients restent à fournir. Les chiffres de marché des captures, datés de 2025 et non sourcés, ne sont pas publiés comme des données actuelles.
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn-pages-router) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/pages/building-your-application/deploying) for more details.
+Le portrait utilisé provient d’une extraction assistée par IA de la capture fournie. Remplacer `public/david-revert.png` par la photo originale avant publication pour garantir une fidélité exacte.

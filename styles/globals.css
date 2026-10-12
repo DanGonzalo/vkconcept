@@ -22,3 +22,25 @@ html {
 .animate-fadeIn {
   animation: fadeIn 0.8s ease-out forwards;
 }
+
+@layer base {
+  body { @apply bg-[#0A0F1C] text-gray-300 antialiased; }
+  section[id], article[id], main[id] { scroll-margin-top: 6rem; }
+  :focus-visible { outline: 2px solid #4DBDE8; outline-offset: 5px; }
+  ::selection { background: #3AA7D0; color: white; }
+}
+@layer components {
+  .section-shell { @apply mx-auto w-full max-w-6xl px-6 py-10 sm:py-12 lg:py-16; }
+  .form-label { @apply block text-sm font-medium text-white; }
+  .form-input { @apply mt-2 block w-full min-w-0 rounded-lg border border-white/25 bg-[#0A0F1C] px-4 py-3 text-base font-normal text-white placeholder:text-gray-400; }
+  .eyebrow { @apply text-xs font-semibold uppercase tracking-[0.2em] text-[#4DBDE8]; }
+  .section-title { @apply mt-4 max-w-3xl text-3xl font-bold leading-tight tracking-tight text-white md:text-4xl; }
+  .section-intro { @apply mt-5 max-w-2xl text-lg leading-relaxed text-gray-300; }
+  .button-primary { @apply inline-flex items-center justify-center gap-4 rounded-lg bg-gradient-to-r from-[#4DBDE8] to-[#3AA7D0] px-6 py-3 font-semibold text-[#0A0F1C] shadow-lg transition hover:brightness-110; }
+  .button-secondary { @apply inline-flex items-center justify-center rounded-lg border border-[#4DBDE8] px-6 py-3 font-semibold text-[#4DBDE8] transition hover:bg-white/10; }
+  .skip-link { @apply fixed left-4 top-4 z-50 -translate-y-24 rounded bg-[#0A0F1C] px-5 py-3 text-white focus:translate-y-0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+}

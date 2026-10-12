@@ -1,20 +1,12 @@
-// components/Layout.tsx
-"use client";
-import React, { ReactNode } from "react";
+import { ReactNode } from "react";
+import dynamic from "next/dynamic";
 import Header from "./Header";
 import Footer from "./Footer";
-import ParticlesBackground from "./ParticlesBackground";
-
-interface LayoutProps { children: ReactNode; }
-
-export default function Layout({ children }: LayoutProps) {
-  return (
-    <div className="relative flex flex-col min-h-screen overflow-hidden">
-      <ParticlesBackground />
-      <Header />
-      <main className="flex-grow pt-4 pb-32">{children}</main>
-      <Footer />
-    </div>
-  );
+const ParticlesBackground = dynamic(() => import("./ParticlesBackground"), { ssr: false });
+export default function Layout({ children }: { children: ReactNode }) {
+  return <div className="relative isolate flex min-h-screen flex-col">
+    <a href="#main" className="skip-link">Aller au contenu</a>
+    <ParticlesBackground /><Header />
+    <main id="main" className="flex-grow">{children}</main><Footer />
+  </div>;
 }
-

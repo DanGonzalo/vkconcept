@@ -1,17 +1,6 @@
 const SEO = {
-  title: "VK Concept – Outsourcing & Consulting IT",
-  description:
-    "Externalisez vos projets IT et accélérez votre croissance avec VK Concept.",
-  openGraph: {
-    type: "website",
-    locale: "fr_FR",
-    url: "https://www.vkconceptvn.com",
-    site_name: "VK Concept",
-  },
-  twitter: {
-    handle: "@vkconceptvn",
-    cardType: "summary_large_image",
-  },
+  title: "VK Concept | Portage salarial, développement logiciel & IA au Vietnam",
+  description: "VK Concept accompagne les entreprises françaises au Vietnam : portage salarial, développement logiciel sur mesure et intelligence artificielle. Parlons de votre projet IT.",
+  url: "https://www.vkconceptvn.com",
 };
-
 export default SEO;
