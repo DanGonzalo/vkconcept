@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { assetPath } from "../components/assetPath";
 import ContactForm from "../components/ContactForm";
 import Link from "next/link";
 import SEO from "../components/SEO";
@@ -12,7 +13,7 @@ export default function About() {
       ["Une organisation flexible", "Freelance, équipe dédiée ou projet sur mesure : le modèle de collaboration suit vos besoins."],
     ].map(([title, text]) => <article key={title} className="rounded-2xl border border-white/10 bg-white/5 p-7"><h3 className="text-xl font-semibold text-white">{title}</h3><p className="mt-4 leading-relaxed">{text}</p></article>)}</div></section>
     <section className="section-shell"><p className="eyebrow">Nos expertises</p><h2 className="section-title">Nos trois expertises.</h2><div className="mt-8 grid gap-3 sm:grid-cols-3"><Link className="button-secondary px-4 text-center" href="/portage-salarial-vietnam">Portage salarial IT</Link><Link className="button-secondary px-4 text-center" href="/developpement-logiciel">Développement logiciel</Link><Link className="button-secondary px-4 text-center" href="/intelligence-artificielle">Intelligence artificielle</Link></div></section>
-    <section className="section-shell"><div className="grid items-center gap-6 rounded-2xl border border-white/15 bg-white/5 p-6 min-[560px]:grid-cols-[160px_1fr] lg:grid-cols-[190px_1fr] lg:gap-8 lg:p-8"><Image src="/david-revert.png" alt="Portrait de David Revert" width={400} height={400} className="aspect-[3/4] w-40 rounded-xl object-cover object-[50%_35%] lg:w-[190px]" /><div><p className="eyebrow">Votre interlocuteur</p><h2 className="section-title">David Revert</h2><p className="section-intro">Un premier échange pour comprendre votre entreprise, clarifier votre besoin et envisager les prochaines étapes avec VK Concept.</p><Link href="#contact" className="button-secondary mt-6">Présenter mon projet ↗</Link></div></div></section>
+    <section className="section-shell"><div className="grid items-center gap-6 rounded-2xl border border-white/15 bg-white/5 p-6 min-[560px]:grid-cols-[160px_1fr] lg:grid-cols-[190px_1fr] lg:gap-8 lg:p-8"><Image src={assetPath("/david-revert.png")} alt="Portrait de David Revert" width={400} height={400} className="aspect-[3/4] w-40 rounded-xl object-cover object-[50%_35%] lg:w-[190px]" /><div><p className="eyebrow">Votre interlocuteur</p><h2 className="section-title">David Revert</h2><p className="section-intro">Un premier échange pour comprendre votre entreprise, clarifier votre besoin et envisager les prochaines étapes avec VK Concept.</p><Link href="#contact" className="button-secondary mt-6">Présenter mon projet ↗</Link></div></div></section>
     <ContactForm />
   </>;
 }

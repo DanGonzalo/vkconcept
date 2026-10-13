@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { assetPath } from "./assetPath";
 import { useRouter } from "next/router";
 
 const links = [
@@ -19,7 +20,7 @@ export default function Header() {
     <header className="fixed inset-x-0 top-0 z-20 border-b border-white/10 bg-[#0A0F1C]/90 backdrop-blur-md">
       <nav aria-label="Navigation principale" className="mx-auto flex max-w-6xl flex-wrap items-center justify-between px-6 py-4">
         <Link href="/" aria-label="VK Concept — Accueil" onClick={() => setOpen(false)}>
-          <Image src="/logo-nav-v2.svg" alt="VK Concept" width={160} height={40} priority />
+          <Image src={assetPath("/logo-nav-v2.svg")} alt="VK Concept" width={160} height={40} priority />
         </Link>
         <button type="button" className="rounded-lg border border-white/20 px-4 py-2 text-white lg:hidden" aria-expanded={open} aria-controls="navigation-links" onClick={() => setOpen(!open)}>
           {open ? "Fermer" : "Menu"}
